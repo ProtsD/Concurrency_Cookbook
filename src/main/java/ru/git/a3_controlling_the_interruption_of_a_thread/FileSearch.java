@@ -1,4 +1,4 @@
-package ru.git.a3_controlling_the_interruption;
+package ru.git.a3_controlling_the_interruption_of_a_thread;
 
 import java.io.File;
 

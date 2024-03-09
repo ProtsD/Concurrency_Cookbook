@@ -1,4 +1,4 @@
-package ru.git.a1_creating_running;
+package ru.git.a1_creating_running_and_setting_the_characteristis_of_a_thread;
 
 import java.io.FileWriter;
 import java.io.IOException;

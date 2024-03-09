@@ -1,4 +1,4 @@
-package ru.git.a5_waiting_for_the_finalization;
+package ru.git.a5_waiting_for_the_finalization_a_thread;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package ru.git.a6_creating_and_running_a_daemon;
+package ru.git.a6_creating_and_running_a_daemon_thread;
 
 import java.util.Date;
 import java.util.Deque;

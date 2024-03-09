@@ -1,4 +1,4 @@
-package ru.git.a7_processing_uncontrolled_exceptions;
+package ru.git.a7_processing_uncontrolled_exceptions_in_a_thread;
 
 public class ExceptionHandler implements Thread.UncaughtExceptionHandler {
     @Override

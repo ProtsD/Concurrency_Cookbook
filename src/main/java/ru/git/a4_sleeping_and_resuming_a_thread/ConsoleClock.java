@@ -1,4 +1,4 @@
-package ru.git.a4_sleeping_and_resuming;
+package ru.git.a4_sleeping_and_resuming_a_thread;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
