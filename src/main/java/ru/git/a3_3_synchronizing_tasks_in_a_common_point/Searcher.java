@@ -28,17 +28,16 @@ public class Searcher implements Runnable {
                 Thread.currentThread().getName(),
                 firstRow, lastRow);
         for (int i = firstRow; i < lastRow; i++) {
-            int row[] = mock.getRow(i);
+            int[] row = mock.getRow(i);
             counter = 0;
-            for (int j = 0; j < row.length; j++) {
-                if (row[j] == number) {
+            for (int k : row) {
+                if (k == number) {
                     counter++;
                 }
             }
             results.setData(i, counter);
         }
-        System.out.printf("%s: Lines processed.\n",
-                Thread.currentThread().getName());
+        System.out.printf("%s: Lines processed.\n", Thread.currentThread().getName());
         try {
             barrier.await();
         } catch (InterruptedException e) {

@@ -23,7 +23,7 @@ public class FileSearch implements Runnable {
 
     private void directoryProcess(File file) {
 
-        File list[] = file.listFiles();
+        File[] list = file.listFiles();
         if (list != null) {
             for (int i = 0; i < list.length; i++) {
                 if (list[i].isDirectory()) {
@@ -77,6 +77,7 @@ public class FileSearch implements Runnable {
     private void showInfo() {
         for (int i = 0; i < results.size(); i++) {
             File file = new File(results.get(i));
+            System.out.println("++++++++++++" + results.get(i));
             System.out.printf("%s: %s\n",
                     Thread.currentThread().getName(),
                     file.getAbsolutePath());

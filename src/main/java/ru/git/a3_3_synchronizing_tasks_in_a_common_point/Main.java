@@ -13,7 +13,7 @@ public class Main {
         Results results = new Results(ROWS);
         Grouper grouper = new Grouper(results);
         CyclicBarrier barrier = new CyclicBarrier(PARTICIPANTS, grouper);
-        Searcher searchers[] = new Searcher[PARTICIPANTS];
+        Searcher[] searchers = new Searcher[PARTICIPANTS];
         for (int i = 0; i < PARTICIPANTS; i++) {
             searchers[i] = new Searcher(i * LINES_PARTICIPANT,
                     (i * LINES_PARTICIPANT) + LINES_PARTICIPANT,

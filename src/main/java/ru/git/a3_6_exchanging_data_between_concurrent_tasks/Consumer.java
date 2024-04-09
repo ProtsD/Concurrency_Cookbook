@@ -28,6 +28,7 @@ public class Consumer implements Runnable {
                 System.out.println("Consumer: " + message);
                 buffer.remove(0);
             }
+//            System.out.println("---- Consumer buffer size: " + " Сycle: " + cycle + " +++" + buffer.toString());
         }
     }
 }

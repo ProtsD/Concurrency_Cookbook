@@ -3,8 +3,8 @@ package ru.git.a3_2_waiting_for_multiple_concurrent_events;
 import java.util.concurrent.TimeUnit;
 
 public class Participant implements Runnable {
-    private Videoconference conference;
-    private String name;
+    private final Videoconference conference;
+    private final String name;
 
     public Participant(Videoconference conference, String name) {
         this.conference = conference;

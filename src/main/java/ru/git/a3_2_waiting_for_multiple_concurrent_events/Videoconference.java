@@ -20,8 +20,8 @@ public class Videoconference implements Runnable {
         System.out.printf("VideoConference: Initialization: %d participants.\n", controller.getCount());
         try {
             controller.await();
-            System.out.printf("VideoConference: All the participants have come\n");
-            System.out.printf("VideoConference: Let's start...\n");
+            System.out.println("VideoConference: All the participants have come");
+            System.out.println("VideoConference: Let's start...");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

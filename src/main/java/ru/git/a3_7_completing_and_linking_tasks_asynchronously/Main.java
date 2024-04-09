@@ -3,6 +3,7 @@ package ru.git.a3_7_completing_and_linking_tasks_asynchronously;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ForkJoinPool;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,19 +15,19 @@ public class Main {
         int seed = 0;
         try {
             seed = seedFuture.get();
+//            seed = seedFuture.join();
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         System.out.printf("Main: The seed is: %d\n", seed);
+
         System.out.printf("Main: Launching the list of numbers generator\n");
         NumberListGenerator task = new NumberListGenerator(seed);
-        CompletableFuture<List<Long>> startFuture = CompletableFuture
-                .supplyAsync(task);
+        CompletableFuture<List<Long>> startFuture = CompletableFuture.supplyAsync(task);
         System.out.printf("Main: Launching step 1\n");
         CompletableFuture<Long> step1Future = startFuture
                 .thenApplyAsync(list -> {
-                    System.out.printf("%s: Step 1: Start\n",
-                            Thread.currentThread().getName());
+                    System.out.printf("%s: Step 1: Start\n", Thread.currentThread().getName());
                     long selected = 0;
                     long selectedDistance = Long.MAX_VALUE;
                     long distance;
@@ -58,12 +59,12 @@ public class Main {
                 .thenApplyAsync(numberSelector);
         System.out.printf("Main: Waiting for the end of the three steps\n");
         CompletableFuture<Void> waitFuture = CompletableFuture
-                .allOf(step1Future, write2Future,
-                        step3Future);
+                .allOf(step1Future, write2Future, step3Future);
         CompletableFuture<Void> finalFuture = waitFuture
                 .thenAcceptAsync((param) -> {
                     System.out.printf("Main: The CompletableFuture example has been completed.");
                 });
         finalFuture.join();
+        System.out.println("++++++++++++++++++++++++");
     }
 }

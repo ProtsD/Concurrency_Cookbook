@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class PrintQueue {
     private final Semaphore semaphore;
-    private final boolean freePrinters[];
+    private final boolean[] freePrinters;
     private final Lock lockPrinters;
 
     public PrintQueue() {

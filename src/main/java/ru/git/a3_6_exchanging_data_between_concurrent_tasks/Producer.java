@@ -28,6 +28,7 @@ public class Producer implements Runnable {
                 e.printStackTrace();
             }
             System.out.println("Producer: " + buffer.size());
+//            System.out.println("---- Producer buffer size: " + " Сycle: " + cycle + " +++" + buffer.toString());
         }
     }
 }

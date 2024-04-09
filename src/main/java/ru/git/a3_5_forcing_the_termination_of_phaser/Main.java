@@ -3,12 +3,12 @@ package ru.git.a3_5_forcing_the_termination_of_phaser;
 public class Main {
     public static void main(String[] args) {
         MyPhaser phaser = new MyPhaser();
-        Student students[] = new Student[5];
+        Student[] students = new Student[5];
         for (int i = 0; i < students.length; i++) {
             students[i] = new Student(phaser);
             phaser.register();
         }
-        Thread threads[] = new Thread[students.length];
+        Thread[] threads = new Thread[students.length];
         for (int i = 0; i < students.length; i++) {
             threads[i] = new Thread(students[i], "Student " + i);
             threads[i].start();
